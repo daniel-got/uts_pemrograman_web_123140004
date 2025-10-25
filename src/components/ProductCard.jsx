@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import PropTypes from 'prop-types'
+import './style/ProductCard.css'
 
 function ProductCard({ product }) {
   const navigate = useNavigate()

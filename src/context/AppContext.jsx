@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react'
+import { createContext, useContext, useReducer, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 const AppContext = createContext()
@@ -48,6 +48,13 @@ function appReducer(state, action) {
         selectedCategory: action.payload
       }
 
+    case 'TOGGLE_THEME':
+      const newTheme = state.theme === 'dark' ? 'light' : 'dark'
+      return {
+        ...state,
+        theme: newTheme
+      }
+
     default:
       return state
   }
@@ -57,12 +64,21 @@ function appReducer(state, action) {
 const initialState = {
   cart: [],
   searchTerm: '',
-  selectedCategory: 'all'
+  selectedCategory: 'all',
+  theme: 'dark'
 }
 
 // Provider component
 export function AppProvider({ children }) {
   const [state, dispatch] = useReducer(appReducer, initialState)
+
+  useEffect(() => {
+    if (state.theme==='light') {
+      document.documentElement.classList.add('light-mode')
+    }else{
+      document.documentElement.classList.remove('light-mode')
+    }
+  }, [state.theme])
 
   // Helper functions
   const addToCart = (product) => {
@@ -85,6 +101,10 @@ export function AppProvider({ children }) {
     dispatch({ type: 'SET_CATEGORY', payload: category })
   }
 
+  const toggleTheme = () => {
+    dispatch({type: 'TOGGLE_THEME'})
+  }
+
   // Calculate cart total
   const cartTotal = state.cart.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -99,7 +119,8 @@ export function AppProvider({ children }) {
     clearCart,
     setSearchTerm,
     setCategory,
-    cartTotal
+    cartTotal,
+    toggleTheme
   }
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>

@@ -1,5 +1,6 @@
 import { useApp } from '../context/AppContext'
 import { Link } from 'react-router-dom'
+import './style/Cart.css'
 
 // Komponen Halaman Cart
 function Cart() {

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useFetch } from '../hooks/useFetch'
 import { useApp } from '../context/AppContext'
 import { Loading, ErrorMessage } from '../components/Loading'
+import './style/ProductDetail.css'
 
 function ProductDetail() {
   const { id } = useParams()

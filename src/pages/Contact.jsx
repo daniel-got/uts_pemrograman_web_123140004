@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './style/Contact.css'
 
 // Komponen Contact
 function Contact() {
@@ -18,16 +19,13 @@ function Contact() {
   // Fungsi handleSubmit
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Simulasi pengiriman
+
     console.log('Form submitted:', formData)
     
-    // Tampilkan notifikasi
     setNotification('Form submitted!!!')
     
-    // Bersihkan form
     setFormData({ name: '', email: '', message: '' })
 
-    // Sembunyikan notifikasi setelah 3 detik
     setTimeout(() => {
       setNotification('')
     }, 3000)

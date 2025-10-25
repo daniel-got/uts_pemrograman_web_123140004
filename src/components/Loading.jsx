@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import './style/Loading.css'
 
 // Loading Component
 export function Loading({ message = 'Loading...' }) {

@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback } from 'react'
 import PropTypes from 'prop-types'
+import './style/SearchBar.css'
 
 function SearchBar({ onSearch, placeholder = 'Search products...' }) {
   const [searchTerm, setSearchTerm] = useState('')

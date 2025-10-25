@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
+import './style/Navbar.css'
 
 function Navbar() {
-  const { state } = useApp()
+  const { state, toggleTheme } = useApp()
   const cartCount = state.cart.reduce((total, item) => total + item.quantity, 0)
   
   // State untuk hamburger menu
@@ -32,6 +33,11 @@ function Navbar() {
       document.body.classList.remove('menu-open')
     }
   }, [isOpen])
+
+  const handleTheme = () => {
+    toggleTheme()
+    closeMenu()
+  }
 
   return (
     <nav className="navbar">
@@ -88,6 +94,12 @@ function Navbar() {
               onClick={closeMenu}>
               Cart {cartCount > 0 && <span className="badge">{cartCount}</span>}
             </NavLink>
+          </li>
+          
+          <li className={isOpen ? 'fade' : ''}>
+            <button className="theme-toggle-btn" onClick={handleTheme}>
+              {state.theme==='dark' ? '☀️' : '🌙'}
+            </button>
           </li>
         </ul>
       </div>

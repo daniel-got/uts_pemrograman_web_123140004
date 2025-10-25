@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useFetch } from '../hooks/useFetch'
 import { useApp } from '../context/AppContext'
 import { Loading } from '../components/Loading'
+import './style/Home.css'
 
 // Komponen Home
 function Home() {

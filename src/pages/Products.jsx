@@ -4,6 +4,7 @@ import { useApp } from '../context/AppContext'
 import ProductCard from '../components/ProductCard'
 import SearchBar from '../components/SearchBar'
 import { Loading, ErrorMessage } from '../components/Loading'
+import './style/Products.css'
 
 function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all')
