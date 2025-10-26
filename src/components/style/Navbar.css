@@ -137,7 +137,6 @@
   font-size: 0.75rem;
 }
 
-/* Global state controlled by Navbar */
 body.menu-open {
   overflow: hidden;
 }
@@ -178,7 +177,7 @@ body.menu-open {
   }
 
   .nav-links li {
-    width: 60%;
+    width: 40%;
     text-align: center;
     opacity: 0;
     transition: all 0.5s ease;
@@ -198,7 +197,7 @@ body.menu-open {
   }
 
   .nav-links a {
-    width: 100%;
+    width: 40%;
     padding: 1.5rem;
     font-size: 1.5rem;
     color: white;

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import './style/Navbar.css'
-
+import logoImage from '../assets/favicon/android-chrome-512x512.png'
 function Navbar() {
   const { state, toggleTheme } = useApp()
   const cartCount = state.cart.reduce((total, item) => total + item.quantity, 0)
@@ -43,7 +43,9 @@ function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-brand">
-          <NavLink to="/" onClick={closeMenu}>ShooLux</NavLink>
+          <NavLink to="/" onClick={closeMenu}>
+            <img src={logoImage} alt="ShooLux Logo" className="navbar-logo" width="163" height="35" />
+          </NavLink>
         </div>
         
         {/* Hamburger Icon */}

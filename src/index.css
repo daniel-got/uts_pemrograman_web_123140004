@@ -1,5 +1,4 @@
 :root {
-  /* 1. Definisikan palet warna baru Anda */
   --color-light-1: #E8EDDF; /* BG Paling Terang */
   --color-light-2: #CFDBD5; /* BG Kartu/UI */
   --color-accent: #F5CB5C;   /* Aksen Kuning */
@@ -8,7 +7,6 @@
   --color-white: #FFFFFF;
   --color-error: #e74c3c; /* Tetap gunakan merah untuk error */
 
-  /* 2. Terapkan sebagai tema default (Mode Gelap) */
   --color-bg: var(--color-dark-1);
   --color-bg-secondary: var(--color-dark-2);
   --color-text-primary: var(--color-light-1);
@@ -30,7 +28,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 3. TAMBAHKAN BLOK LIGHT MODE INI */
 :root.light-mode {
   --color-bg: var(--color-light-1);
   --color-bg-secondary: var(--color-white); /* Kartu tetap putih agar bersih */
@@ -38,6 +35,7 @@
   --color-text-secondary: var(--color-dark-2);
   --color-text-on-accent: var(--color-dark-1);
   --color-border: var(--color-light-2);
+  --color-text-footer: var(--color-light-1);
 }
 
 a {
@@ -82,7 +80,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* 4. TAMBAHKAN STYLE BUTTON UNTUK LIGHT MODE */
 :root.light-mode button {
   background-color: var(--color-bg-secondary);
   color: var(--color-text-primary);
@@ -90,5 +87,5 @@ button:focus-visible {
 }
 :root.light-mode button:hover {
   border-color: var(--color-accent);
-  filter: none; /* Hapus filter brightness di light mode */
+  filter: none; 
 }

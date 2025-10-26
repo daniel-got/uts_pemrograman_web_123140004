@@ -188,6 +188,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 360px;
   max-height: 70px;
 }
 .btn-see-more {
@@ -340,8 +341,8 @@
 }
 .arrow-btn {
   width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  height: 60px;
+  border-radius: 30%;
   font-family: monospace;
   border: 2px solid var(--color-border);
   font-size: 1.5rem;

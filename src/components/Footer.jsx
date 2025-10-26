@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import './style/Footer.css'
+import logoImage from '../assets/favicon/android-chrome-512x512.png'
+
 
 // Komponen Footer
 function Footer() {
@@ -10,7 +12,7 @@ function Footer() {
       <div className="footer-container">
         {/* Kolom 1: About */}
         <div className="footer-column">
-          <h3>ShooLux</h3>
+          <img src={logoImage} alt="ShooLux Logo" className="navbar-logo" width="104.5" height="40.5" />
           <p>
             Your one-stop shop for premium quality products at unbeatable prices.
           </p>
